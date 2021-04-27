@@ -1,0 +1,14 @@
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}
+\contentsline {subsection}{\numberline {1.1}Multivariate Calculus Short Review}{2}{subsection.1.1}
+\contentsline {section}{\numberline {2}Constrained Optimization}{3}{section.2}
+\contentsline {subsection}{\numberline {2.1}Basic Definitions}{3}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Karush-Kuhn-Tucker Conditions}{4}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Basic Theorems and Lemmas}{4}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}First-order optimality conditions}{5}{subsubsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.3}Second-order optimality conditions}{6}{subsubsection.2.2.3}
+\contentsline {subsubsection}{\numberline {2.2.4}Projected Hessians}{7}{subsubsection.2.2.4}
+\contentsline {subsection}{\numberline {2.3}Geometric Interpretation of Optimality Conditions}{8}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Duality in Constrained Optimization}{8}{subsection.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}Bounding Solutions - Weak and Strong Duality}{9}{subsubsection.2.4.1}
+\contentsline {subsection}{\numberline {2.5}Penalty Methods - Using Unconstrained with Penalty for Constrained Problems}{9}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.6}References}{9}{subsection.2.6}

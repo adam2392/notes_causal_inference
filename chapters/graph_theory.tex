@@ -1,0 +1,56 @@
+\documentclass[class=article, crop=false]{standalone}
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{lipsum}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{hyperref}
+\usepackage{import}
+\usepackage[subpreambles=true]{standalone}
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=blue,  %choose some color if you want links to stand out
+}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+\theoremstyle{lemma}
+\newtheorem*{lemma}{Lemma}
+
+\theoremstyle{theorem}
+\newtheorem*{theorem}{Theorem}
+
+\theoremstyle{corollary}
+\newtheorem*{corollary}{Corollary}
+
+\theoremstyle{property}
+\newtheorem*{property}{Property}
+\usepackage[subpreambles=true]{standalone}
+\usepackage{import}
+\begin{document}
+
+\section{Graph Theory}
+	To begin, modern causal inference is built on what Pearl calls, Structural Causal Modeling (SCM), which are 4-tuple pairs of $(U, V, F, P(U))$, where:
+
+	\begin{enumerate}
+		\item U is a set of background (exogenous) variables that are determined by factors outside the model
+		\item V is a set of variables (endogenous) that are determined by variables in the model
+		\item F is a set of functions that map the exogenous variables and their parents to the endogenous variables. I.e. these functions $f \in F$ assian a value to $V_i$ that depends on U and parents of U.
+		\item P(U) is a probability function defined over the domain of U.
+	\end{enumerate}
+
+	Taken, the directed graph, represents a causal diagram encoding our causal assumptions about the world and about the specific problem at hand.
+
+	\subsection{References}
+		Nocedal, and Wright. Springer series in operations research and financial engineering Springer, New York, NY, 2. ed. edition, (2006).
+\end{document}

@@ -1,0 +1,100 @@
+\documentclass[class=article, crop=false]{standalone}
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{lipsum}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{hyperref}
+\usepackage{import}
+\usepackage[subpreambles=true]{standalone}
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=blue,  %choose some color if you want links to stand out
+}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+\theoremstyle{lemma}
+\newtheorem*{lemma}{Lemma}
+
+\theoremstyle{theorem}
+\newtheorem*{theorem}{Theorem}
+
+\theoremstyle{corollary}
+\newtheorem*{corollary}{Corollary}
+
+\theoremstyle{property}
+\newtheorem*{property}{Property}
+\usepackage[subpreambles=true]{standalone}
+\usepackage{import}
+\begin{document}
+
+\section{Directed Acyclic Graphs and Do-Calculus}
+	We follow the formalism of structural causal models (SCMs). 
+
+
+	The following proposition summarizes Pearl's do-calculus rules:
+
+	First, there are two basic criterion that one can take advantage of when decomposing intervention quantities (i.e. P(Y|do(x)))  into observable quantities (i.e. PY(y|x)).
+
+	\subsection{Back-door criterion}
+		Suppose we are given a causal diagram, G, with observed data on a subset V of observed variables in G, and we \textbf{wish to estimate what effect the intervention do(X=x) has on response variables Y}. I.e. What is $P(y|\hat{x})$.
+
+		The back-door criterion is a graphical test that can be applied to the causal diagram to test if a set $Z \subset V$ of variables is sufficient for identifying $P(y | \hat{x})$.
+
+		\begin{definition} [Back-Door Criterion]
+			A set of variables Z, satisfies the back-door criterion relative to an ordered pair of variables $(X_i, X_j)$ in a DAG G, if:
+
+			i) no node in Z is a descendent of $X_i$ and
+
+			ii) Z blocks every path between $X_i$ and $X_j$ that contains an arrow into $X_i$.
+
+			If X and Y are disjoint subsets of nodes in G, then Z satisfies the back-door criterion relative to $(X,Y)$ such that it satisfies the criterion relative to any pair $(X_i, X_j)$ for $X_i \in X$ and $X_j \in Y$.
+		\end{definition}
+
+	\subsection{Front-door criterion}
+		Compared to the back-door criterion, the \textbf{front-door criterion} is a method for identifying causal effects by measuring mediators of the causal effect. 
+
+		\begin{definition} [Front-Door Criterion]
+			A set of variables, M, satisfies the front-door criterion when:
+
+			i) M blocks all directed paths from X to Y and 
+
+			ii) there are no unblocked back-door paths from X to M and 
+
+			iii) X blocks all back-door paths from M to Y.
+
+			Condition i) implies that all effects of X on Y occur by \textbf{mediation} through M!
+
+			Condition ii) says that we can obtain the effect of X on M directly because there are no unobserved confounders affecting both.
+
+			Condition iii) specifies that X satisfies the back-door criterion for identifying the effect of M on Y.
+		\end{definition}
+
+	\subsection{d-separation and conditional independence}
+		In Bayesian networks, the key assumption is that every variable is conditionally independent of its non-descendents, given its parents. This notion can be formalized in the context of \textbf{d-separation}.
+
+		Given a causal graph, G, we say that X is d-separate from Y given Z if: If there are no collider-free paths between X and Y that does not traverse Z. If there is a collider-free path between X and Y that does not traverse Z, then we say X and Y are d-connected.
+
+		This is useful for writing conditional independence statements, such as:
+
+			$$P(X | Y, Z) = P(X | Z)$$
+
+		if X and Y are d-separated by Z. 
+
+	\subsection{c-separation and c-connectedness}
+		In Tian, 2002, a fundamental condition for identifying causal effects that is more general then the back-door and front-door criterion was developed.
+
+	\subsection{References}
+		J. Tian and J. Pearl. 2002. A General Identification Condition for Causal Effects. In Proceedings of the Eighteenth National Conference on Artificial Intelligence (AAAI 2002), pp. 567–573. AAAI Press/The MIT Press, Menlo Park, CA.
+\end{document}
